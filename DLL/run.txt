@@ -1,0 +1,32 @@
+1. First create the B1.java file 
+    >write the java code
+
+
+2. in the terminal run the following command
+    >javac -h . B1.java
+        this command create the file B1.h // do not modify the file
+    
+
+3. Now create the B1.c file
+    > Inside this we'll write the calculator code
+
+4. Now it's time to add the path to the JAVA_HOME
+    >echo $JAVA_HOME
+        this will show nothing for first time
+    
+    >ls /usr/lib/jvm 
+        This will show the jdk folder where the java is installed
+    
+    >export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-arm64 
+            in the last the you need to specify the installed version of your java
+    
+    >echo $JAVA_HOME
+        this will show the path of our JAVA_HOME
+
+5.Now it's time to compile the C file we created which is B1.C
+
+    >gcc -fPIC -I"$JAVA_HOME/include" -I"$JAVA_HOME/include/linux" -shared -o libB1.so B1.c
+
+
+6. Now run the java file
+    >java -Djava.library.path= . B1

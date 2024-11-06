@@ -1,0 +1,4 @@
+START 100
+Label MOVER AREG, =5
+add areg, =999
+sub breg, x
